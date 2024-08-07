@@ -31,8 +31,5 @@ jobs:
       run: katalon -apikey ${{ secrets.KATALON_API_KEY }} -activate
     
     - name: Run Katalon Studio API Tests
-      env:
-        KATALON_EMAIL: ${{ secrets.KATALON_EMAIL }}
-        KATALON_PASSWORD: ${{ secrets.KATALON_PASSWORD }}
       run: |
-        katalonc -noSplash -runMode=console -projectPath=$(pwd)/reqresin.qoinTest1.prj -retry=0 -testSuitePath="Test Suites/Reqres.inTestSuite.ts" -executionProfile="default" -browserType="Web Service"
+        katalonc -noSplash -runMode=console -projectPath=$(pwd)/reqresin.qoinTest1.prj -retry=0 -testSuitePath="Test Suites/Reqres.inTestSuite.ts" -executionProfile="QA" -browserType="Web Service"
